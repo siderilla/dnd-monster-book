@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Monster detail</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Detail</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header></header>
-	<main>
-		<div id="monster-deatail"></div>
-	</main>
-	<footer></footer>
+    <div id="monster-detail-container">
+        <h1 id="monster-name"></h1>
+        <img id="monster-image" alt="Monster Image">
+		<div class="columns">
+            <div id="sx-column">
+                <p id="monster-size"></p>
+                <p id="monster-type"></p>
+                <p id="monster-align"></p>
+            </div>
+            <div id="dx-column">
+                <p id="monster-strength"></p>
+                <p id="monster-dexterity"></p>
+                <p id="monster-constitution"></p>
+                <p id="monster-intelligence"></p>
+                <p id="monster-wisdom"></p>
+                <p id="monster-charisma"></p>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./src/monster-detail.js"></script>
 </body>
-<script type="module" src="./src/detail.js"></script>
 </html>

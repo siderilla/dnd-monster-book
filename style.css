@@ -1,52 +1,118 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&family=MedievalSharp&display=swap');
 body {
-    font-family: "MedievalSharp", cursive;
-    background-color: #2c2c2c;
+    background: linear-gradient(135deg, #2c2c2c, #1f1f1f);
     color: #f5f5f5;
     margin: 0;
     padding: 20px;
+	image-rendering: auto;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
+  	image-rendering: -webkit-optimize-contrast;
 }
 
 #monster-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  background-color: #4b2e2e;
-  padding: 20px;
-  border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    background: rgba(75, 46, 46, 0.95);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 .detail-monster {
-  background-color: #3e3e3e;
-  border: 2px solid #f5f5f5;
-  border-radius: 10px;
-  padding: 15px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #3e3e3e;
+    border: 2px dashed #f5f5f5;
+    padding: 15px;
+    text-align: center;
+    position: relative;
 }
 
 .detail-monster:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
 }
 
+.pixel-container {
+	width: 600;   /* Dimensione finale desiderata */
+	height: 600px;
+	overflow: hidden;
+	display: inline-block;
+  }
+  
+  .pixel-container img {
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: pixelated;
+	width: 1px;    /* Forza una risoluzione molto bassa */
+	height: auto;   /* Se l'immagine è quadrata, altrimenti usa "auto" o calcola in base al ratio */
+	transform: scale(30);  /* Scala per riempire il contenitore */
+	transform-origin: top left;
+	display: block;
+  }
+  
+
 .monster-img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 .detail-monster h3 {
-  margin: 10px 0;
-  font-size: 1.5em;
-  color: #ffcc00;
+    margin: 10px 0;
+    font-size: 2.5em;
+    color: #f5f5f5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+	font-family: "Jacquard 12", system-ui;
 }
 
 .monster-link {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit text color */
-  display: block; /* Make the link a block element */
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 5px;
+    transition: background-color 0.3s;
+}
+
+#monster-detail-container {
+    background: rgba(62, 62, 62, 0.95);
+    border: 2px dashed #f5f5f5;
+    padding: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+
+#monster-detail-container h1 {
+    font-size: 2.8em;
+    text-align: center;
+    color: #f5f5f5;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+	font-family: "Jacquard 12", system-ui;
+}
+
+#monster-detail-container img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#monster-detail-container p {
+    color: #f5f5f5;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+	font-family: "MedievalSharp", cursive;
+}
+
+#sx-column, #dx-column {
+    flex: 1 1 45%;
+    min-width: 200px;
 }
