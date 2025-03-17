@@ -8,22 +8,24 @@ export default class DndService {
         // api/2014/monsters
         const url = `${DndService.BASE_URL}${DndService.MONSTER_URL}`;
 
-        console.log(url);
-
         return fetch(url) // try - prova a prendere
         .then(res => res.json()) // se lo trovi 
         .then(data => {
 
+		
             const requests = [];
 
             for (const monsterInfo of data.results) {
                 const monsterUrl = monsterInfo.url;
                 
                 const fullUrl = DndService.BASE_URL + monsterUrl;
-
+				console.log(fullUrl);
                 const request = fetch(fullUrl)
                 .then(result => result.json())
-                .then(insideData => insideData)
+                .then(insideData => {
+					insideData.fullUrl = fullUrl;
+					return insideData;
+				})
                 .catch(err => console.error(err));
 
                 requests.push(request);
