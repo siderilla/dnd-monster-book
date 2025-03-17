@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+body {
+    font-family: "MedievalSharp", cursive;
+}
+
+#monster-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  background-color: brown;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+}
+
+.monster-img {
+  width: 200px;
+  height: auto;
+}

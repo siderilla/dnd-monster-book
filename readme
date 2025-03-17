@@ -1,0 +1,3 @@
+// per magic non serve la promise.all 
+// chiama api di magic - no dettaglio
+// card: immagine full, footer della carta (semi trasparente che fa overflow all'img) con name, type, rarity 
