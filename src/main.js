@@ -15,9 +15,14 @@ function fetchData() {
 
 fetchData();
 
-
 function render(monsterData) {
+    const link = document.createElement('a');
+    link.href = monsterData.fullUrl;
+    link.classList.add('monster-link');
+
     const container = document.createElement('div');
+    container.classList.add('detail-monster');
+    
     const name = document.createElement('h3');
     const nameText = document.createTextNode(monsterData.name);
 
@@ -26,12 +31,10 @@ function render(monsterData) {
     image.src = DndService.BASE_URL + monsterData.image;
 
     name.appendChild(nameText);
-
     container.appendChild(name);
     container.appendChild(image);
-
-    monstersContainer.appendChild(container);
-
+    link.appendChild(container);
+    monstersContainer.appendChild(link);
 }
 
 // PascalCase - per le classi
